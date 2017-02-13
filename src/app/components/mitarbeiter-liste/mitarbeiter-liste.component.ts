@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MitarbeiterService } from '../../services/mitarbeiter.service';
 
 @Component({
   selector: 'app-mitarbeiter-liste',
@@ -7,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MitarbeiterListeComponent implements OnInit {
 
-  private mitarbeiterListe: Object[] = [ { name: "Fabian Prinz" }, { name: "Ingo Hotischeck" }];
+  private mitarbeiterListe: Object[] = [];
 
-  constructor() { }
+  constructor(
+    private mitarbeiterService: MitarbeiterService
+    ) { }
 
   ngOnInit() {
+    this.mitarbeiterService.getAlleMitarbeiter().subscribe((data) => {
+      for (let mitarbeiter of data) {
+        this.mitarbeiterListe.push(mitarbeiter);
+      }
+    });
   }
 
 }

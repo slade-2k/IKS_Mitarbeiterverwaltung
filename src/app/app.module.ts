@@ -9,6 +9,8 @@ import { MitarbeiterListeComponent } from './components/mitarbeiter-liste/mitarb
 import { MitarbeiterFormularComponent } from './components/mitarbeiter-formular/mitarbeiter-formular.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
+import { MitarbeiterService } from './services/mitarbeiter.service';
+
 const appRoutes: Routes = [
   { path: '', component: MitarbeiterListeComponent },
   { path: 'anlegen', component: MitarbeiterFormularComponent }
@@ -27,7 +29,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [MitarbeiterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
