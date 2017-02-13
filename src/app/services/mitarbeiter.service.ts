@@ -41,4 +41,9 @@ export class MitarbeiterService {
       .put(this.backendUrl + "/mitarbeiter/" + mitarbeiter.id + ".json", JSON.stringify(mitarbeiter), this.requestOptions)
       .map(res => res.json());
   }
+
+  public loescheMitarbeiter(id: number) {
+    return this.http
+      .delete(this.backendUrl + "/mitarbeiter/" + id + ".json", this.requestOptions);
+  }
 }

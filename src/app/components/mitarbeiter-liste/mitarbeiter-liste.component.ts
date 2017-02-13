@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MitarbeiterService } from '../../services/mitarbeiter.service';
+import { Mitarbeiter } from './../../models/mitarbeiter';
 import { Router } from '@angular/router';
 
 @Component({
@@ -30,5 +31,16 @@ export class MitarbeiterListeComponent implements OnInit {
 
   public zeigeMitarbeiter(id: number) {
     this.router.navigateByUrl('/anzeigen/' + id);
+  }
+
+  public loescheMitarbeiter(id: number, idx: number) {
+    let mitarbeiter: Mitarbeiter = this.mitarbeiterListe[idx] as Mitarbeiter;
+
+    if (confirm(mitarbeiter.name + " wirklich löschen?")) {
+      this.mitarbeiterService.loescheMitarbeiter(id)
+        .subscribe(data => {
+          this.mitarbeiterListe.splice(idx, 1);
+        });
+    }
   }
 }
