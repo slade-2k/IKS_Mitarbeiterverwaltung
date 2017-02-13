@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MitarbeiterListeComponent implements OnInit {
 
+  private mitarbeiterListe: Object[] = [ { name: "Fabian Prinz" }, { name: "Ingo Hotischeck" }];
+
   constructor() { }
 
   ngOnInit() {

@@ -1,3 +1,23 @@
-<p>
-  mitarbeiter-liste works!
-</p>
+<h1>IKS Mitarbeiter</h1>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Aktionen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mitarbeiter of mitarbeiterListe; let idx = index">
+        <td>
+          <span>{{mitarbeiter.name}}</span>
+        </td>
+        <td>
+          <a class="btn btn-success btn-xs">Anzeigen</a>
+          <a class="btn btn-warning btn-xs">Bearbeiten</a>
+          <a class="btn btn-danger btn-xs">Löschen</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
