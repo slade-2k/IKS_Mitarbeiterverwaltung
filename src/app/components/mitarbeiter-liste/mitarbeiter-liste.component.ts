@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MitarbeiterService } from '../../services/mitarbeiter.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mitarbeiter-liste',
@@ -11,7 +12,8 @@ export class MitarbeiterListeComponent implements OnInit {
   private mitarbeiterListe: Object[] = [];
 
   constructor(
-    private mitarbeiterService: MitarbeiterService
+    private mitarbeiterService: MitarbeiterService,
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -20,6 +22,10 @@ export class MitarbeiterListeComponent implements OnInit {
         this.mitarbeiterListe.push(mitarbeiter);
       }
     });
+  }
+
+  public bearbeiteMitarbeiter(id: number) {
+    this.router.navigateByUrl('/bearbeiten/' + id);
   }
 
 }

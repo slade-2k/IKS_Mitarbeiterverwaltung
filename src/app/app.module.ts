@@ -13,7 +13,8 @@ import { MitarbeiterService } from './services/mitarbeiter.service';
 
 const appRoutes: Routes = [
   { path: '', component: MitarbeiterListeComponent },
-  { path: 'anlegen', component: MitarbeiterFormularComponent }
+  { path: 'anlegen', component: MitarbeiterFormularComponent },
+  { path: 'bearbeiten/:id', component: MitarbeiterFormularComponent }
 ];
 
 @NgModule({
