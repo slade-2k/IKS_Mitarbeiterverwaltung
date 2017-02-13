@@ -1,3 +1,20 @@
-<p>
-  mitarbeiter-formular works!
-</p>
+<h1>{{mitarbeiter.name}}&nbsp;</h1>
+<form>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="mitarbeiter.name" placeholder="Name" required>
+  </div>
+  <div class="form-group"> 
+    <label for="foto">Foto</label>
+    <input type="text" class="form-control" id="foto" name="foto" [(ngModel)]="mitarbeiter.foto" placeholder="Bild-URL" required>
+  </div>
+  <div class="form-group">
+    <label for="email">E-Mail</label>
+    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="mitarbeiter.email" placeholder="E-Mail Adresse" required>
+  </div>
+  <div class="form-group">
+    <label for="tel">Tel</label>
+    <input type="tel" class="form-control" id="tel" name="tel" [(ngModel)]="mitarbeiter.tel" placeholder="Telefon" required>
+  </div>
+  <button type="submit" (click)="speichereMitarbeiter()" class="btn btn-primary">Speichern</button>
+</form>
