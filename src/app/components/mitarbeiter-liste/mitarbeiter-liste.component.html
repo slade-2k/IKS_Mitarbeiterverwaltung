@@ -13,7 +13,7 @@
           <span>{{mitarbeiter.name}}</span>
         </td>
         <td>
-          <a class="btn btn-success btn-xs">Anzeigen</a>
+          <a class="btn btn-success btn-xs" (click)="zeigeMitarbeiter(mitarbeiter.id)">Anzeigen</a>
           <a class="btn btn-warning btn-xs" (click)="bearbeiteMitarbeiter(mitarbeiter.id)">Bearbeiten</a>
           <a class="btn btn-danger btn-xs">Löschen</a>
         </td>

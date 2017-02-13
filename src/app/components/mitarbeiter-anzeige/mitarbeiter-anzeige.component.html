@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-2">
+    <img class="thumbnail" src="{{mitarbeiter.foto}}" id="foto" />
+  </div>
+  <div class="col-md-10">
+    <h1 style="margin-top: 0;" id="name">{{mitarbeiter.name}}</h1>
+    <div class="row">
+      <div class="col-md-2">Tel</div>
+      <div class="col-md-10"><a href="{{'tel:'+mitarbeiter.tel}}" id="tel">{{mitarbeiter.tel}}</a></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">E-Mail</div>
+      <div class="col-md-10"><a href="{{'mailto:'+mitarbeiter.email}}" id="email">{{mitarbeiter.email}}</a></div>
+    </div>
+  </div>
+</div>

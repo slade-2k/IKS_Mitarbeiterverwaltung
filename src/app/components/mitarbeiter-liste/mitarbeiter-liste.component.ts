@@ -28,4 +28,7 @@ export class MitarbeiterListeComponent implements OnInit {
     this.router.navigateByUrl('/bearbeiten/' + id);
   }
 
+  public zeigeMitarbeiter(id: number) {
+    this.router.navigateByUrl('/anzeigen/' + id);
+  }
 }
